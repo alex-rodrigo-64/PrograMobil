@@ -35,6 +35,7 @@ public class RegistroActivity extends AppCompatActivity {
     private String email="";
     private String contra="";
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
