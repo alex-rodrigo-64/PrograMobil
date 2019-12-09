@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:orientation="vertical"
+        android:background="@drawable/th"
+        android:padding="16dp">
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cuenta"
+        android:text=""
         android:textSize="30sp"
         android:layout_centerInParent="true"/>
+
+
+    <TextView
+        android:id="@+id/nombreUsuarioText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="370dp"
+        android:text=""
+        android:textSize="30sp"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/emailUsuarioText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="460dp"
+        android:text=""
+        android:textSize="20sp"
+        android:layout_centerInParent="true"/>
+
+
+    <Button
+        android:id="@+id/favoritos"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/edittext_rounded_fav"
+        android:text="FAVORITOS"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/ajustes"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/edittext_rounded_fav"
+        android:text="Configuraciones"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
 
 </RelativeLayout>
