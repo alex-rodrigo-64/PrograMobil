@@ -6,22 +6,39 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.mundo_lap.rows_cards.rowClass;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawer;
     FirebaseAuth auth;
+    private RecyclerView mBloglist;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //
+        mDatabase= FirebaseDatabase.getInstance().getReference().child("item");
+        mDatabase.keepSynced(true);
+
+        mBloglist=(RecyclerView)findViewById(R.id.my_recycleview);
+        mBloglist.setHasFixedSize(true);
+        mBloglist.setLayoutManager(new LinearLayoutManager(this));
+        //
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
@@ -41,6 +58,33 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseRecyclerAdapter<rowClass,items> adapter =new FirebaseRecyclerAdapter<rowClass, items>
+                (rowClass.class, R.layout.blog_row, items.class, mDatabase){
+            @Override
+            protected void onBindViewHolder(@NonNull items holder, int position, @NonNull rowClass model) {
+
+            }
+
+
+            @Override
+            public items onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                return null;
+            }
+        };
+
+    }
+    public static class items extends RecyclerView.ViewHolder
+    {
+        View mView;
+        public items(View itemView){
+            super(itemView);
+            mView=itemView;
+        }
     }
 
     @Override
