@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
+//import java.util.Objects;
 
 public class RegistroActivity extends AppCompatActivity {
 
@@ -35,6 +36,7 @@ public class RegistroActivity extends AppCompatActivity {
     private String email="";
     private String contra="";
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,10 +45,10 @@ public class RegistroActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        nombre = findViewById(R.id.nuevoNombre);
-        correo = findViewById(R.id.nuevoEmail);
-        password = findViewById(R.id.nuevoContraseña);
-        nuevaCuenta = findViewById(R.id.nuevoUsuario);
+        nombre = (EditText) findViewById(R.id.nuevoNombre);
+        correo = (EditText) findViewById(R.id.nuevoEmail);
+        password = (EditText) findViewById(R.id.nuevoContraseña);
+        nuevaCuenta = (Button) findViewById(R.id.nuevoUsuario);
 
         nuevaCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +61,7 @@ public class RegistroActivity extends AppCompatActivity {
 
                     if(contra.length()>= 6){
                         registerUser();
+                        finish();
                     }else{
                         Toast.makeText(RegistroActivity.this,"La Contraseña debe tener al menos 6 Caracteres",Toast.LENGTH_SHORT).show();
                     }
@@ -77,14 +80,17 @@ public class RegistroActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Map<String , Object> map = new HashMap<>();
-                    map.put("Nombre",name);
-                    map.put("Cuenta",email);
-                    map.put("Contraseña",contra);
+                    map.put("nombre",name);
+                    map.put("cuenta",email);
+                    map.put("contraseña",contra);
+
                     String id = mAuth.getCurrentUser().getUid();
+
                     mDatabase.child("Users").child(id).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+
                         @Override
-                        public void onComplete(@NonNull Task<Void> task4) {
-                            if(task4.isSuccessful()){
+                        public void onComplete(@NonNull Task<Void> task2) {
+                            if(task2.isSuccessful()){
                                 Toast.makeText(RegistroActivity.this, "registro exitoso", Toast.LENGTH_LONG).show();
                                 Intent main = new Intent(getApplicationContext(), HomeActivity.class);
                                 startActivity(main);
@@ -101,12 +107,4 @@ public class RegistroActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if(mAuth.getCurrentUser() != null){
-            startActivity(new Intent(RegistroActivity.this,HomeActivity.class));
-            finish();
-        }
-    }
 }
