@@ -6,10 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,12 +21,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
+
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+
+
 
     DrawerLayout drawer;
     FirebaseAuth auth;
     DatabaseReference mDatabase;
+
 
 
 
@@ -37,8 +44,12 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         auth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Blog()).commit();
+        //cagarCardView();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         drawer = findViewById(R.id.my_menu);
 
@@ -48,6 +59,35 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this, drawer,toolbar,R.string.abrir_navigation_drawner,R.string.cerrar_navigation_drawner);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+
+
+    }
+
+
+    public void cagarCardView(){
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Blog()).commit();
+        mDatabase.child("items").child("001").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast2 = dataSnapshot.child("precio").getValue().toString();
+                    String mast3 = dataSnapshot.child("imagen").getValue().toString();
+                    TextView x = findViewById(R.id.post_title1);
+                    x.setText(mast);
+                    TextView x2 = findViewById(R.id.post_precio1);
+                    x2.setText(mast2);
+                    ImageView x3 = findViewById(R.id.post_image1);
+                    Picasso.get().load(mast3).into(x3);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
     }
@@ -127,5 +167,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
 
     }
+
 
 }

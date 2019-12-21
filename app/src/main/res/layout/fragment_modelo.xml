@@ -10,5 +10,18 @@
         android:text="@string/modelo"
         android:textSize="30sp"
         android:layout_centerInParent="true"/>
+    <Button
+        android:id="@+id/ir_home"
+        android:layout_width="550dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="265dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="25dp"
+        android:drawableRight="@drawable/ic_volver_home"
+        android:background="@drawable/edittext_rounded_fav3"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        />
 
 </RelativeLayout>

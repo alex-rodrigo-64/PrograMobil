@@ -59,21 +59,34 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/ajustes"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="60dp"
-        android:background="@drawable/edittext_rounded_fav"
-        android:text="Configuraciones"
+    android:id="@+id/ajustes"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginStart="60dp"
+    android:layout_marginTop="350dp"
+    android:layout_marginEnd="60dp"
+    android:background="@drawable/edittext_rounded_fav"
+    android:text="Configuraciones"
+    android:textColor="@color/colorPrimaryText"
+    android:textSize="15sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/ir_home"
+        android:layout_width="550dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="265dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="25dp"
+        android:drawableRight="@drawable/ic_volver_home"
+        android:background="@drawable/edittext_rounded_fav3"
         android:textColor="@color/colorPrimaryText"
         android:textSize="15sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
+        />
 
 </RelativeLayout>
