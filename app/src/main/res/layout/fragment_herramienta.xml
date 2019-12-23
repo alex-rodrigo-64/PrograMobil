@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/herramienta"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
 
     <Button
         android:id="@+id/ir_home"
@@ -18,11 +12,36 @@
         android:layout_marginStart="265dp"
         android:layout_marginTop="530dp"
         android:layout_marginEnd="25dp"
-        android:drawableRight="@drawable/ic_volver_home"
         android:background="@drawable/edittext_rounded_fav3"
+        android:drawableRight="@drawable/ic_volver_home"
         android:textColor="@color/colorPrimaryText"
         android:textSize="15sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/imageButton_autocad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/autocad2" />
+
+    <ImageButton
+        android:id="@+id/imageButton_office"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton_autocad"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/office" />
+    <ImageButton
+        android:id="@+id/imageButton_ide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton_office"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/ides" />
 
 </RelativeLayout>
