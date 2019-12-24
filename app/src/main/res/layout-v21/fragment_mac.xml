@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<ScrollView
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -46,14 +52,14 @@
             android:textSize="20dp"/>
 
         <Button
-            android:id="@+id/descripcion1"
+            android:id="@+id/fav1"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav1"
+            android:id="@+id/share1"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -101,14 +107,14 @@
         android:textColor="#ffff"
         android:textSize="20dp"/>
         <Button
-            android:id="@+id/descripcion2"
+            android:id="@+id/fav2"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav2"
+            android:id="@+id/share2"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -155,14 +161,14 @@
             android:textColor="#ffff"
             android:textSize="20dp"/>
         <Button
-            android:id="@+id/descripcion3"
+            android:id="@+id/fav3"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav3"
+            android:id="@+id/share3"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -209,14 +215,14 @@
             android:textColor="#ffff"
             android:textSize="20dp"/>
         <Button
-            android:id="@+id/descripcion4"
+            android:id="@+id/fav4"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav4"
+            android:id="@+id/share4"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -262,14 +268,14 @@
             android:textColor="#ffff"
             android:textSize="20dp"/>
         <Button
-            android:id="@+id/descripcion5"
+            android:id="@+id/fav5"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav5"
+            android:id="@+id/share5"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -315,14 +321,14 @@
             android:textColor="#ffff"
             android:textSize="20dp"/>
         <Button
-            android:id="@+id/descripcion6"
+            android:id="@+id/fav6"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav6"
+            android:id="@+id/share6"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -368,14 +374,14 @@
             android:textColor="#ffff"
             android:textSize="20dp"/>
         <Button
-            android:id="@+id/descripcion7"
+            android:id="@+id/fav7"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav7"
+            android:id="@+id/share7"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -421,14 +427,14 @@
             android:textColor="#ffff"
             android:textSize="20dp"/>
         <Button
-            android:id="@+id/descripcion8"
+            android:id="@+id/fav8"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav8"
+            android:id="@+id/share8"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -474,14 +480,14 @@
             android:textColor="#ffff"
             android:textSize="20dp"/>
         <Button
-            android:id="@+id/descripcion9"
+            android:id="@+id/fav9"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav9"
+            android:id="@+id/share9"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -527,14 +533,14 @@
             android:textColor="#ffff"
             android:textSize="20dp"/>
         <Button
-            android:id="@+id/descripcion10"
+            android:id="@+id/fav10"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="30dp"
             android:drawableBottom="@drawable/ic_descripcion"
             android:background="@drawable/edittext_rounded_fav3"/>
         <Button
-            android:id="@+id/fav10"
+            android:id="@+id/share10"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginTop="-40dp"
@@ -555,3 +561,18 @@
 </androidx.cardview.widget.CardView>
 
 </ScrollView>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="550dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="255dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="15dp"
+        android:drawableRight="@drawable/ic_atras"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+</RelativeLayout>

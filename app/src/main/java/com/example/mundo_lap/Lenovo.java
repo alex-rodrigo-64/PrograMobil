@@ -13,6 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -22,12 +23,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class Blog extends Fragment {
+public class Lenovo extends Fragment {
 
     DatabaseReference mDatabase;
     FirebaseAuth mAuth;
-    FirebaseDatabase database;
-    String id;
+
+    Button back;
 
     Button descripcion1;
     Button descripcion2;
@@ -47,21 +48,32 @@ public class Blog extends Fragment {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
-        id = mAuth.getUid();
 
     }
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.blog_row,container,false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        final View view = inflater.inflate(R.layout.fragment_lenovo,container,false);
 
-        mDatabase.child("items").child("001").addValueEventListener(new ValueEventListener() {
+        back = view.findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment nuevoFragmento = new ModeloFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, nuevoFragmento);
+                transaction.addToBackStack(null);
+                //Commit a la transacción
+                transaction.commit();
+            }
+        });
+
+        mDatabase.child("Marcas").child("Lenovo").child("001").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title1);
@@ -70,18 +82,20 @@ public class Blog extends Fragment {
                     x2.setText(mast2);
                     ImageView x3 = view.findViewById(R.id.post_image1);
                     Picasso.get().load(mast3).into(x3);
-
                 }
             }
+
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {}
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
         });
 
-        descripcion1 = view.findViewById(R.id.descripcion1);
+        descripcion1 = view.findViewById(R.id.fav1);
         descripcion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("items").child("001").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Lenovo").child("001").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -110,74 +124,11 @@ public class Blog extends Fragment {
             }
         });
 
-
-        /*fav2 = view.findViewById(R.id.fav2);//cambia fav 1,2,3....
-        fav2.setOnClickListener(new View.OnClickListener() { //cambia fav 1,2,3....
-            @Override
-            public void onClick(View v) {
-
-                mDatabase.child("items").child("002").addValueEventListener(new ValueEventListener() {//item cambia
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.exists()){
-                            String marca = dataSnapshot.child("marca").getValue().toString();
-                            String precio = dataSnapshot.child("precio").getValue().toString();
-                            String imagen = dataSnapshot.child("imagen").getValue().toString();
-                            String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
-                            //String id = mAuth.getUid();
-                            mDatabase = database.getReference("Users").child(id).child("Favoritos").child("002"); //item cambia
-                            //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
-                            mDatabase.child("caracteristicas").setValue(caracteristicas);
-                            mDatabase.child("imagen").setValue(precio);
-                            mDatabase.child("marca").setValue(imagen);
-                            mDatabase.child("precio").setValue(marca);
-
-                        }
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {}
-                });
-            }
-        });*/
-
-        descripcion2 = view.findViewById(R.id.descripcion2);
-        descripcion2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDatabase.child("items").child("011").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.exists()){
-                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
-
-                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                            builder.setTitle("Caracteristicas");
-                            builder.setMessage(mast);
-                            builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //Hacer cosas aqui al hacer clic en el boton de aceptar
-                                }
-                            });
-                            builder.show();
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-            }
-        });
-
-        mDatabase.child("items").child("011").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Lenovo").child("002").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title2);
@@ -195,12 +146,44 @@ public class Blog extends Fragment {
             }
         });
 
+        descripcion2 = view.findViewById(R.id.fav2);
+        descripcion2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDatabase.child("Marcas").child("Lenovo").child("002").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.exists()){
+                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
 
-        mDatabase.child("items").child("003").addValueEventListener(new ValueEventListener() {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                            builder.setTitle("Caracteristicas");
+                            builder.setMessage(mast);
+                            builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //Hacer cosas aqui al hacer clic en el boton de aceptar
+                                }
+                            });
+                            builder.show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        mDatabase.child("Marcas").child("Lenovo").child("003").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title3);
@@ -218,11 +201,11 @@ public class Blog extends Fragment {
             }
         });
 
-        descripcion3 = view.findViewById(R.id.descripcion3);
+        descripcion3 = view.findViewById(R.id.fav3);
         descripcion3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("items").child("003").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Lenovo").child("003").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -251,11 +234,11 @@ public class Blog extends Fragment {
             }
         });
 
-        mDatabase.child("items").child("004").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Lenovo").child("004").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title4);
@@ -273,11 +256,11 @@ public class Blog extends Fragment {
             }
         });
 
-        descripcion4 = view.findViewById(R.id.descripcion4);
+        descripcion4 = view.findViewById(R.id.fav4);
         descripcion4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("items").child("004").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Lenovo").child("004").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -306,11 +289,11 @@ public class Blog extends Fragment {
             }
         });
 
-        mDatabase.child("items").child("005").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Lenovo").child("005").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title5);
@@ -328,11 +311,12 @@ public class Blog extends Fragment {
             }
         });
 
-        descripcion5 = view.findViewById(R.id.descripcion5);
+
+        descripcion5 = view.findViewById(R.id.fav5);
         descripcion5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("items").child("005").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Lenovo").child("005").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -360,12 +344,11 @@ public class Blog extends Fragment {
 
             }
         });
-
-        mDatabase.child("items").child("006").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Lenovo").child("006").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title6);
@@ -383,15 +366,15 @@ public class Blog extends Fragment {
             }
         });
 
-        descripcion6 = view.findViewById(R.id.descripcion6);
+        descripcion6 = view.findViewById(R.id.fav6);
         descripcion6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("items").child("006").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Lenovo").child("006").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
-                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
+                            String mast = dataSnapshot.child("caraceristicas").getValue().toString();
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                             builder.setTitle("Caracteristicas");
@@ -416,11 +399,11 @@ public class Blog extends Fragment {
             }
         });
 
-        mDatabase.child("items").child("007").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Lenovo").child("007").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title7);
@@ -438,11 +421,11 @@ public class Blog extends Fragment {
             }
         });
 
-        descripcion7 = view.findViewById(R.id.descripcion7);
+        descripcion7 = view.findViewById(R.id.fav7);
         descripcion7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("items").child("007").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Lenovo").child("007").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -471,11 +454,11 @@ public class Blog extends Fragment {
             }
         });
 
-        mDatabase.child("items").child("008").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Lenovo").child("008").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title8);
@@ -493,11 +476,11 @@ public class Blog extends Fragment {
             }
         });
 
-        descripcion8 = view.findViewById(R.id.descripcion8);
+        descripcion8 = view.findViewById(R.id.fav8);
         descripcion8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("items").child("008").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Lenovo").child("008").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -526,11 +509,11 @@ public class Blog extends Fragment {
             }
         });
 
-        mDatabase.child("items").child("009").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Lenovo").child("009").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title9);
@@ -548,11 +531,11 @@ public class Blog extends Fragment {
             }
         });
 
-        descripcion9 = view.findViewById(R.id.descripcion9);
+        descripcion9 = view.findViewById(R.id.fav9);
         descripcion9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("items").child("009").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Lenovo").child("009").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -581,11 +564,11 @@ public class Blog extends Fragment {
             }
         });
 
-        mDatabase.child("items").child("010").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Lenovo").child("010").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title10);
@@ -603,11 +586,11 @@ public class Blog extends Fragment {
             }
         });
 
-        descripcion10 = view.findViewById(R.id.descripcion10);
+        descripcion10 = view.findViewById(R.id.fav10);
         descripcion10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("items").child("010").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Lenovo").child("010").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
