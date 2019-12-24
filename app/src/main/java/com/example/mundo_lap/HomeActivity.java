@@ -64,7 +64,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    public void cagarCardView(){
+   /* public void cagarCardView(){
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Blog()).commit();
         mDatabase.child("items").child("001").addValueEventListener(new ValueEventListener() {
@@ -90,7 +90,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         });
 
 
-    }
+    }*/
 
 
     @Override
