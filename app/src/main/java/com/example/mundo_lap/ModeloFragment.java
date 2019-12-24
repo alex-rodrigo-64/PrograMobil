@@ -20,6 +20,8 @@ public class ModeloFragment extends Fragment {
     Button acer;
     Button mac;
     Button dell;
+    Button toshiba;
+    Button huawei;
 
     @Nullable
     @Override
@@ -106,6 +108,31 @@ public class ModeloFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment nuevoFragmento = new Dell();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, nuevoFragmento);
+                transaction.addToBackStack(null);
+                //Commit a la transacción
+                transaction.commit();
+            }
+        });
+
+        toshiba = view.findViewById(R.id.toshiba);
+        toshiba.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment nuevoFragmento = new Toshiba();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, nuevoFragmento);
+                transaction.addToBackStack(null);
+                //Commit a la transacción
+                transaction.commit();
+            }
+        });
+        huawei = view.findViewById(R.id.huawei);
+        huawei.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment nuevoFragmento = new Huawei();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
