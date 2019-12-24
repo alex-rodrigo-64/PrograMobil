@@ -1,15 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/modelo"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccentDark">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+                <Button
+                android:id="@+id/asus"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/asus"/>
+                <Button
+                    android:id="@+id/hp"
+                    android:layout_width="match_parent"
+                    android:layout_height="222dp"
+                    android:layout_marginTop="225dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/hp" />
+                <Button
+                    android:id="@+id/dell"
+                    android:layout_width="match_parent"
+                    android:layout_height="222dp"
+                    android:layout_marginTop="446dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/dell" />
+                <Button
+                    android:id="@+id/mac"
+                    android:layout_width="match_parent"
+                    android:layout_height="222dp"
+                    android:layout_marginTop="667dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/mac"/>
+
+            <Button
+                android:id="@+id/lenovo"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="887dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/lenovo" />
+
+            <Button
+                android:id="@+id/acer"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginTop="1107dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/aser"/>
+            <Button
+            android:id="@+id/toshiba"
+            android:layout_width="match_parent"
+            android:layout_height="222dp"
+            android:layout_marginTop="1328dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/toshiba"/>
+            <Button
+                android:id="@+id/huawei"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginTop="1549dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/huawei"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1757dp"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
     <Button
         android:id="@+id/ir_home"
         android:layout_width="550dp"
@@ -22,6 +102,5 @@
         android:textColor="@color/colorPrimaryText"
         android:textSize="15sp"
         android:textStyle="bold"
-        />
-
+        tools:ignore="MissingConstraints" />
 </RelativeLayout>
