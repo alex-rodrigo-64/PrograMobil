@@ -1,6 +1,5 @@
 package com.example.mundo_lap;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.mundo_lap.herramientas.HerrAutoActivity;
-import com.example.mundo_lap.herramientas.HerrOfficeActivity;
+//import com.example.mundo_lap.herramientas.HerrAutoActivity;
+//import com.example.mundo_lap.herramientas.HerrOfficeActivity;
 
 public class HerramientaFragment extends Fragment {
 
@@ -27,7 +26,7 @@ public class HerramientaFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_herramienta,container,false);
+        View view = inflater.inflate(R.layout.fragment_herramientas,container,false);
         irHome = view.findViewById(R.id.ir_home);
         irHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +39,7 @@ public class HerramientaFragment extends Fragment {
                 transaction.commit();
             }
         });
-        //
+       /* //
         ib1 = view.findViewById(R.id.imageButton_autocad);
         ib1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +67,7 @@ public class HerramientaFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), HerrOfficeActivity.class);
                 getActivity().startActivity(intent);
             }
-        });
+        });*/
 
 
         return  view;

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccentDark">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/asus"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/autocad2"/>
+            <Button
+                android:id="@+id/hp"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginTop="225dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/office" />
+            <Button
+                android:id="@+id/dell"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginTop="446dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/ides" />
+        </RelativeLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/ir_home"
+        android:layout_width="550dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="265dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="25dp"
+        android:drawableRight="@drawable/ic_volver_home"
+        android:background="@drawable/edittext_rounded_fav3"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        />
+
+</RelativeLayout>
