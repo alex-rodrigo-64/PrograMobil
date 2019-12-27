@@ -12,9 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".herramientas.HerrIdesActivity"></activity>
-        <activity android:name=".herramientas.HerrOfficeActivity" />
-        <activity android:name=".herramientas.HerrAutoActivity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>

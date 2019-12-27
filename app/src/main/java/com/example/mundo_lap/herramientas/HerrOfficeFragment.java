@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class HerrAutoFragment extends Fragment {
+public class HerrOfficeFragment extends Fragment {
 
     DatabaseReference mDatabase;
     FirebaseAuth mAuth;
@@ -56,7 +56,7 @@ public class HerrAutoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_herr_autocad,container,false);
+        final View view = inflater.inflate(R.layout.fragment_herr_office,container,false);
 
         back = view.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -71,11 +71,11 @@ public class HerrAutoFragment extends Fragment {
             }
         });
 
-        mDatabase.child("Herramientas").child("Autocad").child("001").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Office").child("001").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("marca").getValue().toString();
+                    String mast = dataSnapshot.child("modelo").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title1);
@@ -97,7 +97,7 @@ public class HerrAutoFragment extends Fragment {
         descripcion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Herramientas").child("Autocad").child("001").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Office").child("001").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -125,7 +125,7 @@ public class HerrAutoFragment extends Fragment {
 
             }
         });
-        mDatabase.child("Herramientas").child("Autocad").child("002").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Office").child("002").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -151,11 +151,11 @@ public class HerrAutoFragment extends Fragment {
         descripcion2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Herramientas").child("Autocad").child("002").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Office").child("002").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
-                            String mast = dataSnapshot.child("caracterisiticas").getValue().toString();
+                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                             builder.setTitle("Caracteristicas");
@@ -179,7 +179,7 @@ public class HerrAutoFragment extends Fragment {
 
             }
         });
-        mDatabase.child("Herramientas").child("Autocad").child("003").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Office").child("003").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -205,62 +205,7 @@ public class HerrAutoFragment extends Fragment {
         descripcion3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Herramientas").child("Autocad").child("003").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.exists()){
-                            String mast = dataSnapshot.child("caracterisiticas").getValue().toString();
-
-                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                            builder.setTitle("Caracteristicas");
-                            builder.setMessage(mast);
-                            builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //Hacer cosas aqui al hacer clic en el boton de aceptar
-                                }
-                            });
-                            builder.show();
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-            }
-        });
-
-        mDatabase.child("Herramientas").child("Autocad").child("004").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("modelo").getValue().toString();
-                    String mast2 = dataSnapshot.child("precio").getValue().toString();
-                    String mast3 = dataSnapshot.child("imagen").getValue().toString();
-                    TextView x = view.findViewById(R.id.post_title4);
-                    x.setText(mast);
-                    TextView x2 = view.findViewById(R.id.post_precio4);
-                    x2.setText(mast2);
-                    ImageView x3 = view.findViewById(R.id.post_image4);
-                    Picasso.get().load(mast3).into(x3);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        descripcion4 = view.findViewById(R.id.fav4);
-        descripcion4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDatabase.child("Herramientas").child("Autocad").child("004").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Office").child("003").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -288,7 +233,62 @@ public class HerrAutoFragment extends Fragment {
 
             }
         });
-        mDatabase.child("Herramientas").child("Autocad").child("005").addValueEventListener(new ValueEventListener() {
+
+        mDatabase.child("Herramientas").child("Office").child("004").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    String mast = dataSnapshot.child("nombre").getValue().toString();
+                    String mast2 = dataSnapshot.child("precio").getValue().toString();
+                    String mast3 = dataSnapshot.child("imagen").getValue().toString();
+                    TextView x = view.findViewById(R.id.post_title4);
+                    x.setText(mast);
+                    TextView x2 = view.findViewById(R.id.post_precio4);
+                    x2.setText(mast2);
+                    ImageView x3 = view.findViewById(R.id.post_image4);
+                    Picasso.get().load(mast3).into(x3);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        descripcion4 = view.findViewById(R.id.fav4);
+        descripcion4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDatabase.child("Herramientas").child("Office").child("004").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.exists()){
+                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
+
+                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                            builder.setTitle("Caracteristicas");
+                            builder.setMessage(mast);
+                            builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //Hacer cosas aqui al hacer clic en el boton de aceptar
+                                }
+                            });
+                            builder.show();
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+        mDatabase.child("Herramientas").child("Office").child("005").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -314,7 +314,7 @@ public class HerrAutoFragment extends Fragment {
         descripcion5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Herramientas").child("Autocad").child("005").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Office").child("005").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -343,7 +343,7 @@ public class HerrAutoFragment extends Fragment {
             }
         });
 
-        mDatabase.child("Herramientas").child("Autocad").child("006").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Office").child("006").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -369,7 +369,7 @@ public class HerrAutoFragment extends Fragment {
         descripcion6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Herramientas").child("Autocad").child("006").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Office").child("006").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -397,7 +397,7 @@ public class HerrAutoFragment extends Fragment {
 
             }
         });
-        mDatabase.child("Herramientas").child("Autocad").child("007").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Office").child("007").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -423,7 +423,7 @@ public class HerrAutoFragment extends Fragment {
         descripcion7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Herramientas").child("Autocad").child("007").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Office").child("007").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
