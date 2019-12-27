@@ -4,13 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/herramienta"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccentDark">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/autocad"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/autocad2"/>
+            <Button
+                android:id="@+id/office"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginTop="225dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/office" />
+            <Button
+                android:id="@+id/ides"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginTop="446dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/ides" />
+        </RelativeLayout>
+    </ScrollView>
     <Button
         android:id="@+id/ir_home"
         android:layout_width="550dp"

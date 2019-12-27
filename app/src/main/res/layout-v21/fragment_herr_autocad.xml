@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccentDark"
+    android:fillViewport="true">
+
+
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorAccentDark"
+    android:background="@color/colorAccentDark"
+    android:elevation="90dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_rounded_fav2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:id="@+id/post_image1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_title1"
+            android:text="POST TITLE"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_precio1"
+            android:text="POST PRECIO"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/fav1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:drawableBottom="@drawable/ic_descripcion"
+            android:background="@drawable/edittext_rounded_fav3"/>
+        <Button
+            android:id="@+id/share1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="135dp"
+            android:drawableBottom="@drawable/ic_favoritos"
+            android:background="@drawable/edittext_rounded_fav3"
+            />
+        <Button
+            android:id="@+id/send1"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="240dp"
+            android:drawableBottom="@drawable/ic_compartir_todos"
+            android:background="@drawable/edittext_rounded_fav3"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="280dp"
+    android:orientation="vertical"
+        android:background="@drawable/edittext_rounded_fav2"
+    android:layout_marginTop="280dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:scaleType="fitXY"
+        android:id="@+id/post_image2"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/post_title2"
+        android:text="POST TITLE"
+        android:textColor="#ffff"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/post_precio2"
+        android:text="POST PRECIO"
+        android:textColor="#ffff"
+        android:textSize="20dp"/>
+        <Button
+            android:id="@+id/fav2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:drawableBottom="@drawable/ic_descripcion"
+            android:background="@drawable/edittext_rounded_fav3"/>
+        <Button
+            android:id="@+id/share2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="135dp"
+            android:drawableBottom="@drawable/ic_favoritos"
+            android:background="@drawable/edittext_rounded_fav3"
+            />
+        <Button
+            android:id="@+id/send2"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="240dp"
+            android:drawableBottom="@drawable/ic_compartir_todos"
+            android:background="@drawable/edittext_rounded_fav3"/>
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_rounded_fav2"
+        android:layout_marginTop="560dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:id="@+id/post_image3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_title3"
+            android:text="POST TITLE"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_precio3"
+            android:text="POST PRECIO"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/fav3"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:drawableBottom="@drawable/ic_descripcion"
+            android:background="@drawable/edittext_rounded_fav3"/>
+        <Button
+            android:id="@+id/share3"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="135dp"
+            android:drawableBottom="@drawable/ic_favoritos"
+            android:background="@drawable/edittext_rounded_fav3"
+            />
+        <Button
+            android:id="@+id/send3"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="240dp"
+            android:drawableBottom="@drawable/ic_compartir_todos"
+            android:background="@drawable/edittext_rounded_fav3"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_rounded_fav2"
+        android:layout_marginTop="840dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:id="@+id/post_image4"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_title4"
+            android:text="POST TITLE"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_precio4"
+            android:text="POST PRECIO"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/fav4"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:drawableBottom="@drawable/ic_descripcion"
+            android:background="@drawable/edittext_rounded_fav3"/>
+        <Button
+            android:id="@+id/share4"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="135dp"
+            android:drawableBottom="@drawable/ic_favoritos"
+            android:background="@drawable/edittext_rounded_fav3"
+            />
+        <Button
+            android:id="@+id/send4"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="240dp"
+            android:drawableBottom="@drawable/ic_compartir_todos"
+            android:background="@drawable/edittext_rounded_fav3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_rounded_fav2"
+        android:layout_marginTop="1120dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:id="@+id/post_image5"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_title5"
+            android:text="POST TITLE"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_precio5"
+            android:text="POST PRECIO"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/fav5"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:drawableBottom="@drawable/ic_descripcion"
+            android:background="@drawable/edittext_rounded_fav3"/>
+        <Button
+            android:id="@+id/share5"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="135dp"
+            android:drawableBottom="@drawable/ic_favoritos"
+            android:background="@drawable/edittext_rounded_fav3"
+            />
+        <Button
+            android:id="@+id/send5"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="240dp"
+            android:drawableBottom="@drawable/ic_compartir_todos"
+            android:background="@drawable/edittext_rounded_fav3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_rounded_fav2"
+        android:layout_marginTop="1400dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:id="@+id/post_image6"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_title6"
+            android:text="POST TITLE"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_precio6"
+            android:text="POST PRECIO"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/fav6"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:drawableBottom="@drawable/ic_descripcion"
+            android:background="@drawable/edittext_rounded_fav3"/>
+        <Button
+            android:id="@+id/share6"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="135dp"
+            android:drawableBottom="@drawable/ic_favoritos"
+            android:background="@drawable/edittext_rounded_fav3"
+            />
+        <Button
+            android:id="@+id/send6"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="240dp"
+            android:drawableBottom="@drawable/ic_compartir_todos"
+            android:background="@drawable/edittext_rounded_fav3"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_rounded_fav2"
+        android:layout_marginTop="1680dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            android:id="@+id/post_image7"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_title7"
+            android:text="POST TITLE"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/post_precio7"
+            android:text="POST PRECIO"
+            android:textColor="#ffff"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/fav7"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:drawableBottom="@drawable/ic_descripcion"
+            android:background="@drawable/edittext_rounded_fav3"/>
+        <Button
+            android:id="@+id/share7"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="135dp"
+            android:drawableBottom="@drawable/ic_favoritos"
+            android:background="@drawable/edittext_rounded_fav3"
+            />
+        <Button
+            android:id="@+id/send7"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginStart="240dp"
+            android:drawableBottom="@drawable/ic_compartir_todos"
+            android:background="@drawable/edittext_rounded_fav3"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+</ScrollView>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="550dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="255dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="15dp"
+        android:drawableRight="@drawable/ic_atras"
+        android:background="?android:attr/selectableItemBackground"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+</RelativeLayout>
