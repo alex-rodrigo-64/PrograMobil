@@ -11,6 +11,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.mundo_lap.modelos.Acer;
+import com.example.mundo_lap.modelos.Asus;
+import com.example.mundo_lap.modelos.Dell;
+import com.example.mundo_lap.modelos.Hp;
+import com.example.mundo_lap.modelos.Huawei;
+import com.example.mundo_lap.modelos.Lenovo;
+import com.example.mundo_lap.modelos.Mac;
+import com.example.mundo_lap.modelos.Toshiba;
+
 public class ModeloFragment extends Fragment {
 
     Button irHome;

@@ -1,4 +1,4 @@
-package com.example.mundo_lap;
+package com.example.mundo_lap.modelos;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,6 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.mundo_lap.ModeloFragment;
+import com.example.mundo_lap.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class Toshiba extends Fragment {
+public class Huawei extends Fragment {
 
     DatabaseReference mDatabase;
     FirebaseAuth mAuth;
@@ -48,7 +50,7 @@ public class Toshiba extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_toshiba,container,false);
+        final View view = inflater.inflate(R.layout.fragment_huawei,container,false);
 
         back = view.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +65,7 @@ public class Toshiba extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Toshiba").child("001").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Huawei").child("001").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -89,7 +91,7 @@ public class Toshiba extends Fragment {
         descripcion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Toshiba").child("001").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Huawei").child("001").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -119,7 +121,7 @@ public class Toshiba extends Fragment {
         });
 
 
-        mDatabase.child("Marcas").child("Toshiba").child("002").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Huawei").child("002").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -145,7 +147,7 @@ public class Toshiba extends Fragment {
         descripcion2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Toshiba").child("002").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Huawei").child("002").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -174,7 +176,7 @@ public class Toshiba extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Toshiba").child("003").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Huawei").child("003").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -200,7 +202,7 @@ public class Toshiba extends Fragment {
         descripcion3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Toshiba").child("003").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Huawei").child("003").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -229,7 +231,7 @@ public class Toshiba extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Toshiba").child("004").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Huawei").child("004").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -255,7 +257,7 @@ public class Toshiba extends Fragment {
         descripcion4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Toshiba").child("004").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Huawei").child("004").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -284,60 +286,7 @@ public class Toshiba extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Toshiba").child("005").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("modelo").getValue().toString();
-                    String mast2 = dataSnapshot.child("precio").getValue().toString();
-                    String mast3 = dataSnapshot.child("imagen").getValue().toString();
-                    TextView x = view.findViewById(R.id.post_title5);
-                    x.setText(mast);
-                    TextView x2 = view.findViewById(R.id.post_precio5);
-                    x2.setText(mast2);
-                    ImageView x3 = view.findViewById(R.id.post_image5);
-                    Picasso.get().load(mast3).into(x3);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        descripcion5 = view.findViewById(R.id.fav5);
-        descripcion5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mDatabase.child("Marcas").child("Toshiba").child("005").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.exists()){
-                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
-
-                            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                            builder.setTitle("Caracteristicas");
-                            builder.setMessage(mast);
-                            builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //Hacer cosas aqui al hacer clic en el boton de aceptar
-                                }
-                            });
-                            builder.show();
-
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-            }
-        });
+       
 
 
         return  view;

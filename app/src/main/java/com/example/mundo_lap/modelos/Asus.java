@@ -1,4 +1,4 @@
-package com.example.mundo_lap;
+package com.example.mundo_lap.modelos;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,6 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.mundo_lap.ModeloFragment;
+import com.example.mundo_lap.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class Acer extends Fragment {
+public class Asus extends Fragment {
 
     DatabaseReference mDatabase;
     FirebaseAuth mAuth;
@@ -41,6 +43,7 @@ public class Acer extends Fragment {
     Button descripcion9;
     Button descripcion10;
 
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +56,7 @@ public class Acer extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_acer,container,false);
+        final View view = inflater.inflate(R.layout.fragment_asus,container,false);
 
         back = view.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +71,7 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("001").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Asus").child("001").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -94,7 +97,7 @@ public class Acer extends Fragment {
         descripcion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("001").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("001").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -123,7 +126,8 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("002").addValueEventListener(new ValueEventListener() {
+
+        mDatabase.child("Marcas").child("Asus").child("002").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -149,7 +153,7 @@ public class Acer extends Fragment {
         descripcion2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("002").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("002").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -178,7 +182,7 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("003").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Asus").child("003").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -204,7 +208,7 @@ public class Acer extends Fragment {
         descripcion3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("003").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("003").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -233,7 +237,7 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("004").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Asus").child("004").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -259,7 +263,7 @@ public class Acer extends Fragment {
         descripcion4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("004").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("004").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -288,7 +292,7 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("005").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Asus").child("005").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -314,7 +318,7 @@ public class Acer extends Fragment {
         descripcion5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("005").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("005").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -343,7 +347,7 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("006").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Asus").child("006").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -369,7 +373,7 @@ public class Acer extends Fragment {
         descripcion6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("006").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("006").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -398,7 +402,7 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("007").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Asus").child("007").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -424,7 +428,7 @@ public class Acer extends Fragment {
         descripcion7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("007").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("007").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -453,7 +457,7 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("008").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Asus").child("008").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -479,7 +483,7 @@ public class Acer extends Fragment {
         descripcion8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("008").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("008").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -508,7 +512,7 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("009").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Asus").child("009").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -534,7 +538,7 @@ public class Acer extends Fragment {
         descripcion9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("009").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("009").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -563,7 +567,7 @@ public class Acer extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Acer").child("010").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Marcas").child("Asus").child("010").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -589,7 +593,7 @@ public class Acer extends Fragment {
         descripcion10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Acer").child("010").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Marcas").child("Asus").child("010").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){

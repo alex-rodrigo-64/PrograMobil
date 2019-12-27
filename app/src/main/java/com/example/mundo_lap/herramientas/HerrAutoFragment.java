@@ -1,4 +1,4 @@
-package com.example.mundo_lap;
+package com.example.mundo_lap.herramientas;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,6 +15,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.mundo_lap.HerramientaFragment;
+import com.example.mundo_lap.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-public class Lenovo extends Fragment {
+public class HerrAutoFragment extends Fragment {
 
     DatabaseReference mDatabase;
     FirebaseAuth mAuth;
@@ -54,13 +56,13 @@ public class Lenovo extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_lenovo,container,false);
+        final View view = inflater.inflate(R.layout.fragment_herr_autocad,container,false);
 
         back = view.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new ModeloFragment();
+                Fragment nuevoFragmento = new HerramientaFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
@@ -69,11 +71,11 @@ public class Lenovo extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Lenovo").child("001").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Autocad").child("001").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("modelo").getValue().toString();
+                    String mast = dataSnapshot.child("marca").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title1);
@@ -95,7 +97,7 @@ public class Lenovo extends Fragment {
         descripcion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("001").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("001").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -124,11 +126,11 @@ public class Lenovo extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Lenovo").child("002").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Autocad").child("002").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    String mast = dataSnapshot.child("modelo").getValue().toString();
+                    String mast = dataSnapshot.child("marca").getValue().toString();
                     String mast2 = dataSnapshot.child("precio").getValue().toString();
                     String mast3 = dataSnapshot.child("imagen").getValue().toString();
                     TextView x = view.findViewById(R.id.post_title2);
@@ -150,11 +152,11 @@ public class Lenovo extends Fragment {
         descripcion2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("002").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("002").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
-                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
+                            String mast = dataSnapshot.child("caracterisiticas").getValue().toString();
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                             builder.setTitle("Caracteristicas");
@@ -177,9 +179,9 @@ public class Lenovo extends Fragment {
                 });
 
             }
-        });
+        });/*
 
-        mDatabase.child("Marcas").child("Lenovo").child("003").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Autocad").child("003").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -205,11 +207,11 @@ public class Lenovo extends Fragment {
         descripcion3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("003").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("003").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
-                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
+                            String mast = dataSnapshot.child("caracterisitcas").getValue().toString();
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                             builder.setTitle("Caracteristicas");
@@ -234,7 +236,7 @@ public class Lenovo extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Lenovo").child("004").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Autocad").child("004").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -260,7 +262,7 @@ public class Lenovo extends Fragment {
         descripcion4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("004").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("004").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -289,7 +291,7 @@ public class Lenovo extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Lenovo").child("005").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Autocad").child("005").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -311,12 +313,11 @@ public class Lenovo extends Fragment {
             }
         });
 
-
         descripcion5 = view.findViewById(R.id.fav5);
         descripcion5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("005").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("005").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -344,7 +345,8 @@ public class Lenovo extends Fragment {
 
             }
         });
-        mDatabase.child("Marcas").child("Lenovo").child("006").addValueEventListener(new ValueEventListener() {
+
+        mDatabase.child("Herramientas").child("Autocad").child("006").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -370,11 +372,11 @@ public class Lenovo extends Fragment {
         descripcion6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("006").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("006").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
-                            String mast = dataSnapshot.child("caraceristicas").getValue().toString();
+                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                             builder.setTitle("Caracteristicas");
@@ -399,7 +401,7 @@ public class Lenovo extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Lenovo").child("007").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Autocad").child("007").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -425,7 +427,7 @@ public class Lenovo extends Fragment {
         descripcion7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("007").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("007").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -454,7 +456,7 @@ public class Lenovo extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Lenovo").child("008").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Autocad").child("008").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -480,11 +482,11 @@ public class Lenovo extends Fragment {
         descripcion8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("008").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("008").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
-                            String mast = dataSnapshot.child("caracteristicas").getValue().toString();
+                            String mast = dataSnapshot.child("caractersticas").getValue().toString();
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                             builder.setTitle("Caracteristicas");
@@ -509,7 +511,7 @@ public class Lenovo extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Lenovo").child("009").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Autocad").child("009").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -535,7 +537,7 @@ public class Lenovo extends Fragment {
         descripcion9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("009").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("009").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -564,7 +566,7 @@ public class Lenovo extends Fragment {
             }
         });
 
-        mDatabase.child("Marcas").child("Lenovo").child("010").addValueEventListener(new ValueEventListener() {
+        mDatabase.child("Herramientas").child("Autocad").child("010").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
@@ -590,7 +592,7 @@ public class Lenovo extends Fragment {
         descripcion10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDatabase.child("Marcas").child("Lenovo").child("010").addValueEventListener(new ValueEventListener() {
+                mDatabase.child("Herramientas").child("Autocad").child("010").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()){
@@ -617,7 +619,7 @@ public class Lenovo extends Fragment {
                 });
 
             }
-        });
+        });*/
 
         return  view;
     }
