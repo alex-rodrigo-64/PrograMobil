@@ -9,10 +9,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +32,7 @@ public class Blog extends Fragment {
     FirebaseDatabase database;
     String id;
 
+
     Button descripcion1;
     Button descripcion2;
     Button descripcion3;
@@ -39,6 +43,17 @@ public class Blog extends Fragment {
     Button descripcion8;
     Button descripcion9;
     Button descripcion10;
+
+    Button fav1;
+    Button fav2;
+    Button fav3;
+    Button fav4;
+    Button fav5;
+    Button fav6;
+    Button fav7;
+    Button fav8;
+    Button fav9;
+    Button fav10;
 
 
     @Override
@@ -100,6 +115,457 @@ public class Blog extends Fragment {
 
                         }
                     }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+
+        fav1 = view.findViewById(R.id.fav1);
+        fav1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("001").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                            String marca = dataSnapshot.child("marca").getValue().toString();
+                            String precio = dataSnapshot.child("precio").getValue().toString();
+                            String imagen = dataSnapshot.child("imagen").getValue().toString();
+                            String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                            mDatabase = database.getReference("Users").child(id).child("Favoritos").child("001"); //item cambia
+                            //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                                Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                            Fragment nuevoFragmento = new Blog();
+                            FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                            transaction.replace(R.id.fragment_container, nuevoFragmento);
+                            transaction.addToBackStack(null);
+                            //Commit a la transacción
+                            FragmentManager manager = getActivity().getSupportFragmentManager();
+                            FragmentTransaction trans = manager.beginTransaction();
+                            trans.remove(nuevoFragmento).addToBackStack(null);
+                            trans.commit();
+                            manager.popBackStack();
+
+                            }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        fav2 = view.findViewById(R.id.fav2);
+        fav2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("012").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String marca = dataSnapshot.child("marca").getValue().toString();
+                        String precio = dataSnapshot.child("precio").getValue().toString();
+                        String imagen = dataSnapshot.child("imagen").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        mDatabase = database.getReference("Users").child(id).child("Favoritos").child("012"); //item cambia
+                        //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                        Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                        Fragment nuevoFragmento = new Blog();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, nuevoFragmento);
+                        transaction.addToBackStack(null);
+                        //Commit a la transacción
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction trans = manager.beginTransaction();
+                        trans.remove(nuevoFragmento).addToBackStack(null);
+                        trans.commit();
+                        manager.popBackStack();
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        fav3 = view.findViewById(R.id.fav3);
+        fav3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("003").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String marca = dataSnapshot.child("marca").getValue().toString();
+                        String precio = dataSnapshot.child("precio").getValue().toString();
+                        String imagen = dataSnapshot.child("imagen").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        mDatabase = database.getReference("Users").child(id).child("Favoritos").child("003"); //item cambia
+                        //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                        Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                        Fragment nuevoFragmento = new Blog();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, nuevoFragmento);
+                        transaction.addToBackStack(null);
+                        //Commit a la transacción
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction trans = manager.beginTransaction();
+                        trans.remove(nuevoFragmento).addToBackStack(null);
+                        trans.commit();
+                        manager.popBackStack();
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        fav4 = view.findViewById(R.id.fav4);
+        fav4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("004").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String marca = dataSnapshot.child("marca").getValue().toString();
+                        String precio = dataSnapshot.child("precio").getValue().toString();
+                        String imagen = dataSnapshot.child("imagen").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        mDatabase = database.getReference("Users").child(id).child("Favoritos").child("004"); //item cambia
+                        //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                        Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                        Fragment nuevoFragmento = new Blog();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, nuevoFragmento);
+                        transaction.addToBackStack(null);
+                        //Commit a la transacción
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction trans = manager.beginTransaction();
+                        trans.remove(nuevoFragmento).addToBackStack(null);
+                        trans.commit();
+                        manager.popBackStack();
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        fav5 = view.findViewById(R.id.fav5);
+        fav5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("005").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String marca = dataSnapshot.child("marca").getValue().toString();
+                        String precio = dataSnapshot.child("precio").getValue().toString();
+                        String imagen = dataSnapshot.child("imagen").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        mDatabase = database.getReference("Users").child(id).child("Favoritos").child("005"); //item cambia
+                        //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                        Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                        Fragment nuevoFragmento = new Blog();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, nuevoFragmento);
+                        transaction.addToBackStack(null);
+                        //Commit a la transacción
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction trans = manager.beginTransaction();
+                        trans.remove(nuevoFragmento).addToBackStack(null);
+                        trans.commit();
+                        manager.popBackStack();
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        fav6 = view.findViewById(R.id.fav6);
+        fav6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("006").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String marca = dataSnapshot.child("marca").getValue().toString();
+                        String precio = dataSnapshot.child("precio").getValue().toString();
+                        String imagen = dataSnapshot.child("imagen").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        mDatabase = database.getReference("Users").child(id).child("Favoritos").child("006"); //item cambia
+                        //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                        Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                        Fragment nuevoFragmento = new Blog();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, nuevoFragmento);
+                        transaction.addToBackStack(null);
+                        //Commit a la transacción
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction trans = manager.beginTransaction();
+                        trans.remove(nuevoFragmento).addToBackStack(null);
+                        trans.commit();
+                        manager.popBackStack();
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        fav7 = view.findViewById(R.id.fav7);
+        fav7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("007").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String marca = dataSnapshot.child("marca").getValue().toString();
+                        String precio = dataSnapshot.child("precio").getValue().toString();
+                        String imagen = dataSnapshot.child("imagen").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        mDatabase = database.getReference("Users").child(id).child("Favoritos").child("007"); //item cambia
+                        //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                        Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                        Fragment nuevoFragmento = new Blog();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, nuevoFragmento);
+                        transaction.addToBackStack(null);
+                        //Commit a la transacción
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction trans = manager.beginTransaction();
+                        trans.remove(nuevoFragmento).addToBackStack(null);
+                        trans.commit();
+                        manager.popBackStack();
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        fav8 = view.findViewById(R.id.fav8);
+        fav8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("008").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String marca = dataSnapshot.child("marca").getValue().toString();
+                        String precio = dataSnapshot.child("precio").getValue().toString();
+                        String imagen = dataSnapshot.child("imagen").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        mDatabase = database.getReference("Users").child(id).child("Favoritos").child("008"); //item cambia
+                        //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                        Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                        Fragment nuevoFragmento = new Blog();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, nuevoFragmento);
+                        transaction.addToBackStack(null);
+                        //Commit a la transacción
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction trans = manager.beginTransaction();
+                        trans.remove(nuevoFragmento).addToBackStack(null);
+                        trans.commit();
+                        manager.popBackStack();
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        fav9 = view.findViewById(R.id.fav9);
+        fav9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("009").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String marca = dataSnapshot.child("marca").getValue().toString();
+                        String precio = dataSnapshot.child("precio").getValue().toString();
+                        String imagen = dataSnapshot.child("imagen").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        mDatabase = database.getReference("Users").child(id).child("Favoritos").child("009"); //item cambia
+                        //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                        Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                        Fragment nuevoFragmento = new Blog();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, nuevoFragmento);
+                        transaction.addToBackStack(null);
+                        //Commit a la transacción
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction trans = manager.beginTransaction();
+                        trans.remove(nuevoFragmento).addToBackStack(null);
+                        trans.commit();
+                        manager.popBackStack();
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+            }
+        });
+
+        fav10 = view.findViewById(R.id.fav10);
+        fav10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mDatabase.child("items").child("010").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                        String marca = dataSnapshot.child("marca").getValue().toString();
+                        String precio = dataSnapshot.child("precio").getValue().toString();
+                        String imagen = dataSnapshot.child("imagen").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        mDatabase = database.getReference("Users").child(id).child("Favoritos").child("010"); //item cambia
+                        //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
+                        mDatabase.child("caracteristicas").setValue(caracteristicas);
+                        mDatabase.child("imagen").setValue(imagen);
+                        mDatabase.child("marca").setValue(marca);
+                        mDatabase.child("precio").setValue(precio);
+
+                        Toast.makeText(getActivity(),"Añadido a Favoritos",Toast.LENGTH_SHORT).show();
+
+                        Fragment nuevoFragmento = new Blog();
+                        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                        transaction.replace(R.id.fragment_container, nuevoFragmento);
+                        transaction.addToBackStack(null);
+                        //Commit a la transacción
+                        FragmentManager manager = getActivity().getSupportFragmentManager();
+                        FragmentTransaction trans = manager.beginTransaction();
+                        trans.remove(nuevoFragmento).addToBackStack(null);
+                        trans.commit();
+                        manager.popBackStack();
+
+                    }
+
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {

@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="fill"
-        android:text="@string/caracteristica"
+        android:text="@string/carrera"
         android:textColor="@color/colorPrimary" />
 
 

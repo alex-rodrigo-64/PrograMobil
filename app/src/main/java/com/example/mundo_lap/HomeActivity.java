@@ -120,8 +120,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     if(id == R.id.nav_modelo){
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ModeloFragment()).commit();
                     }else{
-                        if(id == R.id.nav_caracteristicas){
-                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new CaracteristicaFragment()).commit();
+                        if(id == R.id.nav_home){
+                            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Blog()).commit();
                         }else{
                             if(id == R.id.nav_compartir){
                                 Toast.makeText(HomeActivity.this,"Compartir con Redes Sociales",Toast.LENGTH_SHORT).show();

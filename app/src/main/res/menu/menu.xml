@@ -10,9 +10,9 @@
     </group>
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_carrera"
-            android:icon="@drawable/ic_carrera"
-            android:title="@string/carrera" />
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_home" />
         <item
             android:id="@+id/nav_herramienta"
             android:icon="@drawable/ic_herramienta"
@@ -22,9 +22,9 @@
             android:icon="@drawable/ic_modelo"
             android:title="@string/modelo" />
         <item
-            android:id="@+id/nav_caracteristicas"
-            android:icon="@drawable/ic_caracteristicas"
-            android:title="@string/caracteristica" />
+            android:id="@+id/nav_carrera"
+            android:icon="@drawable/ic_carrera"
+            android:title="@string/carrera" />
     </group>
     <group  android:id="@+id/grupo2">
             <item

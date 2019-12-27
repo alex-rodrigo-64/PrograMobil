@@ -284,7 +284,7 @@ public class Huawei extends Fragment {
             }
         });
 
-       
+
 
 
         return  view;
