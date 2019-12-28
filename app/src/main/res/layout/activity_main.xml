@@ -88,22 +88,6 @@
             app:layout_constraintTop_toBottomOf="@+id/buttonLogIn" />
 
 
-            <Button
-            android:id="@+id/buttonLogInGoogle"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/login_button_height"
-            android:layout_marginStart="32dp"
-
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/button_ripple_google"
-            android:text="@string/login_sign_in_google"
-            android:textColor="@color/colorPrimaryText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewForgotPassword" />
-
-
         <Button
             android:id="@+id/crearCuenta"
             android:layout_width="match_parent"
@@ -118,7 +102,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonLogInGoogle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewForgotPassword"
             tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
