@@ -63,6 +63,8 @@ public class RegistroActivity extends AppCompatActivity {
                         registerUser();
                         finish();
                     }else{
+
+                   //     password.setError("La Contraseña es corta");
                         Toast.makeText(RegistroActivity.this,"La Contraseña debe tener al menos 6 Caracteres",Toast.LENGTH_SHORT).show();
                     }
                 }else{
@@ -91,6 +93,7 @@ public class RegistroActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if(task2.isSuccessful()){
+                               // password.setError("llamado");
                                 Toast.makeText(RegistroActivity.this, "registro exitoso", Toast.LENGTH_LONG).show();
                                 //Intent main = new Intent(getApplicationContext(), HomeActivity.class);
                                 //startActivity(main);
