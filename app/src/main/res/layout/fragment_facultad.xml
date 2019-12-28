@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccentDark">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+                <Button
+                android:id="@+id/id_agro"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/agronomia"/>
+                <Button
+                    android:id="@+id/id_arq"
+                    android:layout_width="match_parent"
+                    android:layout_height="222dp"
+                    android:layout_marginTop="235dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/arquitectura" />
+                <Button
+                    android:id="@+id/id_der"
+                    android:layout_width="match_parent"
+                    android:layout_height="222dp"
+                    android:layout_marginTop="466dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/dereho" />
+                <Button
+                    android:id="@+id/id_eco"
+                    android:layout_width="match_parent"
+                    android:layout_height="222dp"
+                    android:layout_marginTop="697dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/economia"/>
+
+            <Button
+                android:id="@+id/id_tec"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="927dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/tecnologia" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1157dp"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+    <Button
+        android:id="@+id/ir_home"
+        android:layout_width="550dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="265dp"
+        android:layout_marginTop="530dp"
+        android:layout_marginEnd="25dp"
+        android:drawableRight="@drawable/ic_volver_home"
+        android:background="@drawable/edittext_rounded_fav3"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+</RelativeLayout>

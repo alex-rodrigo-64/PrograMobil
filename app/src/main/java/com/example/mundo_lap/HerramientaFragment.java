@@ -47,7 +47,7 @@ public class HerramientaFragment extends Fragment {
         asus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new HerrAutoFragment();
+                Fragment nuevoFragmento = new AutocadFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
@@ -59,7 +59,7 @@ public class HerramientaFragment extends Fragment {
         hp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new HerrOfficeFragment();
+                Fragment nuevoFragmento = new OfficeFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
@@ -71,7 +71,7 @@ public class HerramientaFragment extends Fragment {
         lenovo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new HerrIdesFragment();
+                Fragment nuevoFragmento = new IdesFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
@@ -79,6 +79,7 @@ public class HerramientaFragment extends Fragment {
                 transaction.commit();
             }
         });
+
         return view;
     }
 }

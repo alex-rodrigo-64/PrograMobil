@@ -23,7 +23,7 @@
                 android:id="@+id/office"
                 android:layout_width="match_parent"
                 android:layout_height="222dp"
-                android:layout_marginTop="225dp"
+                android:layout_marginTop="235dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:background="@drawable/office" />
@@ -31,7 +31,7 @@
                 android:id="@+id/ides"
                 android:layout_width="match_parent"
                 android:layout_height="222dp"
-                android:layout_marginTop="446dp"
+                android:layout_marginTop="466dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
                 android:background="@drawable/ides" />

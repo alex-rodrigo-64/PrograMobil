@@ -112,7 +112,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new CuentaFragment()).commit();
         }else{
             if(id == R.id.nav_carrera){
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new CarreraFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FacultadFragment()).commit();
             }else{
                 if(id == R.id.nav_herramienta){
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new HerramientaFragment()).commit();

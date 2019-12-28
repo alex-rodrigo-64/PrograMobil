@@ -93,10 +93,8 @@ public class RegistroActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task2) {
                             if(task2.isSuccessful()){
-                               // password.setError("llamado");
                                 Toast.makeText(RegistroActivity.this, "registro exitoso", Toast.LENGTH_LONG).show();
-                                //Intent main = new Intent(getApplicationContext(), HomeActivity.class);
-                                //startActivity(main);
+
                             }else{
                                 Toast.makeText(RegistroActivity.this,"No se pudo crear los datos correctamente",Toast.LENGTH_SHORT).show();
                             }

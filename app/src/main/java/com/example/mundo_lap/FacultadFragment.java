@@ -12,22 +12,29 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-public class CarreraFragment extends Fragment {
+import com.example.mundo_lap.facultad.AgronomiaFragment;
+import com.example.mundo_lap.facultad.ArquitecturaFragment;
+import com.example.mundo_lap.facultad.DerechoFragment;
+import com.example.mundo_lap.facultad.EconomiaFragment;
+import com.example.mundo_lap.facultad.TecnologiaFragment;
+
+public class FacultadFragment extends Fragment {
 
     Button irHome;
-    Button asus;
-    Button hp;
-    Button lenovo;
+    Button btAgro;
+    Button btArq;
+    Button btDer;
     Button acer;
-    Button mac;
-    Button dell;
+    Button btEco;
+    Button btTec;
     Button toshiba;
     Button huawei;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_facultades,container,false);
+        View view = inflater.inflate(R.layout.fragment_facultad,container,false);
+
 
         irHome = view.findViewById(R.id.ir_home);
         irHome.setOnClickListener(new View.OnClickListener() {
@@ -41,12 +48,11 @@ public class CarreraFragment extends Fragment {
                 transaction.commit();
             }
         });
-
-        asus = view.findViewById(R.id.agronomia);
-        asus.setOnClickListener(new View.OnClickListener() {
+        btAgro = view.findViewById(R.id.id_agro);
+        btAgro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new HerrOfficeFragment();
+                Fragment nuevoFragmento = new AgronomiaFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
@@ -54,11 +60,11 @@ public class CarreraFragment extends Fragment {
                 transaction.commit();
             }
         });
-        hp = view.findViewById(R.id.arquitectura);
-        hp.setOnClickListener(new View.OnClickListener() {
+        btArq = view.findViewById(R.id.id_arq);
+        btArq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new HerrAutoFragment();
+                Fragment nuevoFragmento = new ArquitecturaFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
@@ -66,11 +72,11 @@ public class CarreraFragment extends Fragment {
                 transaction.commit();
             }
         });
-        lenovo = view.findViewById(R.id.derecho);
-        lenovo.setOnClickListener(new View.OnClickListener() {
+        btDer = view.findViewById(R.id.id_der);
+        btDer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new HerrOfficeFragment();
+                Fragment nuevoFragmento = new DerechoFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
@@ -78,37 +84,11 @@ public class CarreraFragment extends Fragment {
                 transaction.commit();
             }
         });
-        acer = view.findViewById(R.id.economia);
-        acer.setOnClickListener(new View.OnClickListener() {
+        btEco = view.findViewById(R.id.id_eco);
+        btEco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new HerrOfficeFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, nuevoFragmento);
-                transaction.addToBackStack(null);
-                //Commit a la transacción
-                transaction.commit();
-            }
-        });
-
-        mac = view.findViewById(R.id.humanidades);
-        mac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment nuevoFragmento = new HerrOfficeFragment();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, nuevoFragmento);
-                transaction.addToBackStack(null);
-                //Commit a la transacción
-                transaction.commit();
-            }
-        });
-/*
-        dell = view.findViewById(R.id.dell);
-        dell.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment nuevoFragmento = new Dell();
+                Fragment nuevoFragmento = new EconomiaFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
@@ -117,11 +97,11 @@ public class CarreraFragment extends Fragment {
             }
         });
 
-        toshiba = view.findViewById(R.id.toshiba);
-        toshiba.setOnClickListener(new View.OnClickListener() {
+        btTec = view.findViewById(R.id.id_tec);
+        btTec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new Toshiba();
+                Fragment nuevoFragmento = new TecnologiaFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
@@ -129,18 +109,6 @@ public class CarreraFragment extends Fragment {
                 transaction.commit();
             }
         });
-        huawei = view.findViewById(R.id.huawei);
-        huawei.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment nuevoFragmento = new Huawei();
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, nuevoFragmento);
-                transaction.addToBackStack(null);
-                //Commit a la transacción
-                transaction.commit();
-            }
-        });*/
         return view;
     }
 }
