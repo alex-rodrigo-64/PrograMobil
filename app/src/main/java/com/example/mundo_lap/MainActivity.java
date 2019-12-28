@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     Button nuevaCuenta;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 0);
             }
         });
+
+
     }
 
 
