@@ -318,7 +318,7 @@ public class Blog extends Fragment {
                         String marca = dataSnapshot.child("marca").getValue().toString();
                         String precio = dataSnapshot.child("precio").getValue().toString();
                         String imagen = dataSnapshot.child("imagen").getValue().toString();
-                        String caracteristicas = dataSnapshot.child("caracteristicas").getValue().toString();
+                        String caracteristicas = dataSnapshot.child("carcteristicas").getValue().toString();
                         mDatabase = database.getReference("Users").child(id).child("Favoritos").child("005"); //item cambia
                         //Toast.makeText(getActivity(),id,Toast.LENGTH_SHORT).show();
                         mDatabase.child("caracteristicas").setValue(caracteristicas);

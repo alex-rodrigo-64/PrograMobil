@@ -32,6 +32,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawer;
     FirebaseAuth auth;
     DatabaseReference mDatabase;
+    String id;
 
 
 
@@ -43,6 +44,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         auth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        id = getIntent().getStringExtra("nombre");
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Blog()).commit();
         //cagarCardView();
