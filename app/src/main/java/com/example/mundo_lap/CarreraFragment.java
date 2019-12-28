@@ -58,7 +58,7 @@ public class CarreraFragment extends Fragment {
         hp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment nuevoFragmento = new HerrOfficeFragment();
+                Fragment nuevoFragmento = new HerrAutoFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);

@@ -67,14 +67,7 @@
             android:drawableBottom="@drawable/ic_favoritos"
             android:background="@drawable/edittext_rounded_fav3"
             />
-        <Button
-            android:id="@+id/send1"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="240dp"
-            android:drawableBottom="@drawable/ic_compartir_todos"
-            android:background="@drawable/edittext_rounded_fav3"/>
+
 
 
     </LinearLayout>
@@ -122,14 +115,7 @@
             android:drawableBottom="@drawable/ic_favoritos"
             android:background="@drawable/edittext_rounded_fav3"
             />
-        <Button
-            android:id="@+id/send2"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="240dp"
-            android:drawableBottom="@drawable/ic_compartir_todos"
-            android:background="@drawable/edittext_rounded_fav3"/>
+
 
 </LinearLayout>
     <LinearLayout
@@ -176,14 +162,7 @@
             android:drawableBottom="@drawable/ic_favoritos"
             android:background="@drawable/edittext_rounded_fav3"
             />
-        <Button
-            android:id="@+id/send3"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="240dp"
-            android:drawableBottom="@drawable/ic_compartir_todos"
-            android:background="@drawable/edittext_rounded_fav3"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -230,14 +209,7 @@
             android:drawableBottom="@drawable/ic_favoritos"
             android:background="@drawable/edittext_rounded_fav3"
             />
-        <Button
-            android:id="@+id/send4"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="240dp"
-            android:drawableBottom="@drawable/ic_compartir_todos"
-            android:background="@drawable/edittext_rounded_fav3"/>
+
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -283,14 +255,7 @@
             android:drawableBottom="@drawable/ic_favoritos"
             android:background="@drawable/edittext_rounded_fav3"
             />
-        <Button
-            android:id="@+id/send5"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="-40dp"
-            android:layout_marginStart="240dp"
-            android:drawableBottom="@drawable/ic_compartir_todos"
-            android:background="@drawable/edittext_rounded_fav3"/>
+
     </LinearLayout>
 
 

@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class CuentaFragment extends Fragment {
 
     Button irHome;
-
+    Button fav;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,6 +30,18 @@ public class CuentaFragment extends Fragment {
                 transaction.replace(R.id.fragment_container, nuevoFragmento);
                 transaction.addToBackStack(null);
                  //Commit a la transacción
+                transaction.commit();
+            }
+        });
+        fav = view.findViewById(R.id.favoritos);
+        fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment nuevoFragmento = new perfil_1();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, nuevoFragmento);
+                transaction.addToBackStack(null);
+                //Commit a la transacción
                 transaction.commit();
             }
         });
