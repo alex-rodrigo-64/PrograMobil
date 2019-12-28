@@ -29,7 +29,7 @@ public class CuentaFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
         id = mAuth.getUid();
-
+//hola
         irHome = view.findViewById(R.id.ir_home);
         irHome.setOnClickListener(new View.OnClickListener() {
             @Override
